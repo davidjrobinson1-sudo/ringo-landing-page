@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RINGO | The Founder's 100</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #d4af37; --black: #0a0a0a; --dark-grey: #121212; --white: #ffffff; }
+       
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--black); color: var(--white); line-height: 1.6; overflow-x: hidden; }
+       
+        /* Navigation */
+        nav { padding: 20px; display: flex; justify-content: center; align-items: center; background: var(--black); border-bottom: 1px solid #222; sticky: top; }
+        .logo-img { height: 40px; }
+
+        /* Hero */
+        .hero { text-align: center; padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+        .hero img { width: 100%; height: auto; margin-bottom: 20px; }
+        .hero h1 { font-size: clamp(1.5rem, 5vw, 2.5rem); letter-spacing: 2px; margin-bottom: 10px; }
+       
+        /* The Three Points */
+        .features { display: flex; flex-wrap: wrap; justify-content: space-around; padding: 40px 20px; background: var(--dark-grey); }
+        .feature-item { flex: 1; min-width: 250px; text-align: center; padding: 20px; }
+        .feature-item h3 { color: var(--gold); font-size: 1.1rem; text-transform: uppercase; margin-top: 15px; }
+        .feature-item p { font-size: 0.9rem; color: #ccc; }
+
+        /* Lifestyle Section */
+        .lifestyle { display: flex; flex-wrap: wrap; width: 100%; }
+        .lifestyle-img { flex: 1; min-width: 50%; height: 400px; object-fit: cover; }
+
+        /* Scarcity & CTA */
+        .cta-section { padding: 80px 20px; text-align: center; }
+        .status { color: var(--gold); font-weight: bold; font-size: 1.2rem; margin-bottom: 20px; }
+        .cta-btn { background: var(--gold); color: black; padding: 20px 50px; border: none; font-weight: 700; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 1.1rem; display: inline-block; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .lifestyle-img { min-width: 100%; height: 300px; }
+            .feature-item { border-bottom: 1px solid #222; }
+        }
+
+        footer { padding: 40px; border-top: 1px solid #222; font-size: 0.8rem; color: #666; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="logo.png" alt="RINGO" class="logo-img">
+    </nav>
+
+    <section class="hero">
+        <img src="hero-rings.png" alt="Ringo Founder's Edition Lineup">
+        <h1>THE FOUNDER'S DROP: LIMIT 100</h1>
+        <p>Security | Convenience | Style</p>
+    </section>
+
+    <section class="features">
+        <div class="feature-item">
+            <div style="font-size: 2rem;">🛡️</div>
+            <h3>Advanced Tokenized Security</h3>
+            <p>Your data is replaced by encrypted tokens. Every tap is 100% secure.</p>
+        </div>
+        <div class="feature-item">
+            <div style="font-size: 2rem;">⚡</div>
+            <h3>No Charging Required</h3>
+            <p>Powered by the terminal. No batteries, no cables, no hassle.</p>
+        </div>
+        <div class="feature-item">
+            <div style="font-size: 2rem;">💧</div>
+            <h3>50m Water Resistant</h3>
+            <p>Swim, shower, and live. Designed to never leave your finger.</p>
+        </div>
+    </section>
+
+    <section class="lifestyle">
+        <img src="lifestyle-1.png" class="lifestyle-img" alt="Contactless Payment">
+        <img src="lifestyle-2.png" class="lifestyle-img" alt="Stylish NFC Ring">
+    </section>
+
+    <section class="cta-section">
+        <div class="status">STATUS: 72 / 100 RESERVED</div>
+        <a href="mailto:your@email.com?subject=Ringo%20Reservation" class="cta-btn">RESERVE YOUR FOUNDER'S RING NOW</a>
+    </section>
+
+    <footer>
+        &copy; 2026 RINGO. ABOUT | FAQ | CONTACT
+    </footer>
+
+</body>
+</html>
