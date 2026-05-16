@@ -1,113 +1,427 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RINGO | The Founder's 100</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>RINGO | NFC Smart Ring</title>
     <style>
-        :root { --gold: #d4af37; --black: #0a0a0a; --dark-grey: #121212; --white: #ffffff; }
-       
-        * { box-sizing: border-box; }
-        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--black); color: var(--white); line-height: 1.6; overflow-x: hidden; }
-       
+        /* Global Styles & Variables */
+        :root {
+            --bg-dark: #0b0c10;
+            --bg-card: #1f2833;
+            --gold: #d4af37;
+            --text-light: #ffffff;
+            --text-muted: #c5a880;
+            --pure-white: #ffffff;
+            --text-dark: #111111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
         /* Navigation */
-        nav { padding: 25px; display: flex; justify-content: center; align-items: center; background: var(--black); border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; }
-        .logo-img { height: 35px; }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(11, 12, 16, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: var(--text-light);
+        }
+        .logo span { color: var(--gold); }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid transparent;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
 
         /* Hero Section */
-        .hero { text-align: center; padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
-        .hero-main-img { width: 100%; height: auto; margin-bottom: 30px; border-radius: 8px; }
-        .hero h1 { font-size: clamp(1.8rem, 6vw, 3rem); letter-spacing: 3px; margin-bottom: 10px; font-weight: 700; }
-        .hero p { color: #888; font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 40px; }
-       
-        /* Features Section */
-        .features { display: flex; flex-wrap: wrap; justify-content: space-around; padding: 60px 20px; background: var(--dark-grey); border-top: 1px solid #222; border-bottom: 1px solid #222; }
-        .feature-item { flex: 1; min-width: 280px; text-align: center; padding: 30px; transition: transform 0.3s ease; }
-        .feature-item:hover { transform: translateY(-5px); }
-        .feature-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
-        .feature-item h3 { color: var(--gold); font-size: 1.2rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
-        .feature-item p { font-size: 0.95rem; color: #aaa; max-width: 300px; margin: 0 auto; }
+        .hero {
+            display: flex;
+            align-items: center;
+            min-height: 70vh;
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
 
-        /* Lifestyle Section */
-        .lifestyle { display: flex; flex-wrap: wrap; width: 100%; background: #000; }
-        .lifestyle-img { flex: 1; min-width: 50%; height: 500px; object-fit: cover; border: 1px solid #111; }
+        .hero-text {
+            flex: 1;
+        }
 
-        /* Scarcity & CTA */
-        .cta-section { padding: 100px 20px; text-align: center; background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%); }
-        .status-box { margin-bottom: 30px; }
-        .status-text { color: var(--gold); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; }
-        .progress-container { width: 250px; height: 4px; background: #333; margin: 15px auto; border-radius: 2px; }
-        .progress-fill { width: 72%; height: 100%; background: var(--gold); box-shadow: 0 0 10px var(--gold); }
-       
-        .cta-btn { background: var(--gold); color: black; padding: 22px 60px; border: none; font-weight: 700; border-radius: 2px; cursor: pointer; text-decoration: none; font-size: 1.2rem; display: inline-block; transition: all 0.3s ease; letter-spacing: 1px; }
-        .cta-btn:hover { background: #f1c40f; transform: scale(1.05); box-shadow: 0 0 30px rgba(212, 175, 55, 0.4); }
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: var(--gold);
+            color: var(--text-dark);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Placeholder graphic styling for demonstration */
+        .img-placeholder {
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1;
+            background: #111;
+            border-radius: 50%;
+            border: 8px solid #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.5rem;
+            box-shadow: inset 0 0 30px rgba(212,175,55,0.2);
+        }
+
+        /* Urgent Banner */
+        .urgent-banner {
+            background-color: var(--pure-white);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 15px 20px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Main Content Layout (Split View Desktop) */
+        .main-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        /* Product Lineup Grid */
+        .lineup-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #222;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .product-ring-view {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            border: 4px solid #fff;
+        }
+
+        /* Core Features List */
+        .feature-item {
+            margin-bottom: 30px;
+            background: rgba(255,255,255,0.02);
+            padding: 20px;
+            border-left: 3px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .feature-item h3 {
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        /* Action/Unboxing Showcase Blocks */
+        .showcase-block {
+            background: #111;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 1px solid #222;
+        }
+
+        .showcase-box {
+            height: 150px;
+            background: #222;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            border-radius: 4px;
+        }
+
+        /* Reservation Form */
+        .reserve-form-container {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .reserve-form-container p {
+            margin-bottom: 20px;
+            color: #aaa;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: #0b0c10;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group input:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--gold);
+            color: var(--text-dark);
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #b8952e;
+        }
 
         /* Footer */
-        footer { padding: 60px 20px; color: #555; text-align: center; font-size: 0.8rem; letter-spacing: 1px; }
-        footer a { color: #888; text-decoration: none; margin: 0 15px; transition: color 0.3s; }
-        footer a:hover { color: var(--gold); }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #222;
+            margin-top: 60px;
+            font-size: 14px;
+            color: #666;
+        }
 
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .lifestyle-img { min-width: 100%; height: 350px; }
-            .feature-item { padding: 40px 10px; }
-            .hero { padding: 40px 15px; }
+        /* Responsive Media Queries (Mobile Optimization) */
+        @media (max-width: 850px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .main-container {
+                grid-template-columns: 1fr; /* Stacks columns into single view */
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .lineup-grid {
+                grid-template-columns: 1fr; /* Single column for small phones */
+            }
+            .urgent-banner {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <img src="logo.png" alt="RINGO" class="logo-img">
-    </nav>
+    <header>
+        <div class="logo">RING<span>O</span></div>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#faq">FAQ's</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
     <section class="hero">
-        <img src="hero-rings.png" alt="Ringo Founder's Edition Lineup" class="hero-main-img">
-        <h1>THE FOUNDER'S DROP: LIMIT 100</h1>
-        <p>SECURITY | CONVENIENCE | STYLE</p>
-    </section>
-
-    <section class="features">
-        <div class="feature-item">
-            <span class="feature-icon">🛡️</span>
-            <h3>Advanced Tokenization</h3>
-            <p>Your bank details are never stored. Encrypted digital tokens keep every transaction 100% secure.</p>
+        <div class="hero-text">
+            <h1>The Future Is In Your Hands.</h1>
+            <a href="#reserve" class="cta-btn">Reserve Yours Now</a>
         </div>
-        <div class="feature-item">
-            <span class="feature-icon">🔋</span>
-            <h3>No Charging. Ever.</h3>
-            <p>Ringo draws power from the payment terminal. No batteries, no cables, just effortless utility.</p>
-        </div>
-        <div class="feature-item">
-            <span class="feature-icon">💧</span>
-            <h3>50M Waterproof</h3>
-            <p>Crafted for life. Whether you're in the gym, the shower, or the ocean, Ringo stays with you.</p>
+        <div class="hero-image">
+            <div class="img-placeholder">✨ [RING IMAGE MAIN]</div>
         </div>
     </section>
 
-    <section class="lifestyle">
-        <img src="lifestyle-1.png" class="lifestyle-img" alt="Ringo Contactless Payment">
-        <img src="lifestyle-2.png" class="lifestyle-img" alt="Stylish Ringo NFC Ring">
-    </section>
+    <div class="urgent-banner">
+        ⭐⭐ Limited Run - Reserve Yours Now ⭐⭐
+    </div>
 
-    <section class="cta-section" id="reserve">
-        <div class="status-box">
-            <div class="status-text">72 / 100 RESERVED</div>
-            <div class="progress-container">
-                <div class="progress-fill"></div>
-            </div>
-        </div>
-        <a href="mailto:hello@ringopay.com?subject=Founder's%20Edition%20Reservation" class="cta-btn">RESERVE YOUR RING NOW</a>
-    </section>
+    <main class="main-container">
+        <div class="left-col">
+            <section id="lineup">
+                <h2>Product Lineup</h2>
+                <div class="lineup-grid">
+                    <div class="product-card">
+                        <div class="product-ring-view" style="background: #fff;"></div>
+                        <h4>Ringo Classic</h4>
+                        <p style="color:#888; font-size:14px;">White Ceramic</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-ring-view" style="background: #333;"></div>
+                        <h4>Ringo Stealth</h4>
+                        <p style="color:#888; font-size:14px;">Matte Black</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-ring-view" style="background: #fbcbc9;"></div>
+                        <h4>Ringo Elegance</h4>
+                        <p style="color:#888; font-size:14px;">Pink Rose Gold</p>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-ring-view" style="background: #000; border-color:#333;"></div>
+                        <h4>Ringo Midnight</h4>
+                        <p style="color:#888; font-size:14px;">Gloss Black</p>
+                    </div>
+                </div>
+            </section>
 
-    <footer>
-        <div style="margin-bottom: 20px;">
-            <a href="#">ABOUT</a>
-            <a href="#">FAQ</a>
-            <a href="#">CONTACT</a>
+            <section id="features">
+                <h2>Core Features</h2>
+                <div class="feature-item">
+                    <h3>Uncompromising Security</h3>
+                    <p>Advanced tokenization for seamless, secure transactions and access control protocols.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Ease Of Use</h3>
+                    <p>Your ring never needs charging. Powered passively via NFC technology for true zero-maintenance operation.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Waterproof Design</h3>
+                    <p>Completely waterproof and dust-resistant structure built to survive any daily element or environment.</p>
+                </div>
+            </section>
         </div>
-        <p>&copy; 2026 RINGO PAYMENTS. ALL RIGHTS RESERVED.</p>
+
+        <div class="right-col">
+            <section id="action">
+                <h2>See It In Action</h2>
+                <div class="showcase-block">
+                    <p><strong>Point of Sale - Active Tap</strong></p>
+                    <div class="showcase-box">📸 [Male / Female Hands Clenched - POS Terminal Tap]</div>
+                </div>
+            </section>
+
+            <section id="unboxing">
+                <h2>Packaging & Unboxing</h2>
+                <div class="showcase-block">
+                    <p>Uncompromising style from premium gift box to your finger.</p>
+                    <div class="showcase-box">📦 [Premium White & Gold Box Image]</div>
+                </div>
+            </section>
+
+            <section id="reserve">
+                <h2>Reserve Now</h2>
+                <div class="reserve-form-container">
+                    <p>*Strictly limited to the first 100 orders globally.</p>
+                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Reservation registered!');">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Pre-Order Now</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <p>&copy; 2026 RINGO. All Rights Reserved. | Designed for Security, Style, and Convenience.</p>
     </footer>
 
 </body>
