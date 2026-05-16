@@ -58,7 +58,7 @@
         nav a {
             color: var(--text-light);
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 15px;
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -74,23 +74,23 @@
             background: rgba(214, 175, 55, 0.05);
         }
 
-        /* Hero / Introduction Section */
+        /* Hero Section */
         .hero {
             display: flex;
             align-items: center;
-            min-height: 80vh;
+            min-height: 75vh;
             padding: 60px 5%;
             max-width: 1200px;
             margin: 0 auto;
-            gap: 60px;
+            gap: 40px;
         }
 
         .hero-text {
-            flex: 1.2;
+            flex: 1.1;
         }
 
         .hero-text h1 {
-            font-size: 4rem;
+            font-size: 3.8rem;
             line-height: 1.1;
             margin-bottom: 25px;
             text-transform: uppercase;
@@ -120,19 +120,19 @@
         }
 
         .hero-image {
-            flex: 1;
+            flex: 1.3;
             display: flex;
             justify-content: center;
         }
 
         .hero-image img {
             width: 100%;
-            max-width: 450px;
+            max-width: 550px;
             height: auto;
             object-fit: contain;
         }
 
-        /* High-Urgency Scrolling Banner */
+        /* Scarcity Banner */
         .urgent-banner {
             background-color: var(--pure-white);
             color: var(--text-dark);
@@ -144,14 +144,14 @@
             text-transform: uppercase;
         }
 
-        /* Split-Column Desktop Layout Dashboard */
+        /* Two Column Layout Dashboard */
         .main-container {
             max-width: 1200px;
             margin: 60px auto;
             padding: 0 5%;
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 80px;
+            gap: 60px;
         }
 
         section h2 {
@@ -163,7 +163,6 @@
             padding-bottom: 12px;
         }
 
-        /* Showcases and Full Lineup Display */
         .showcase-img {
             width: 100%;
             height: auto;
@@ -176,7 +175,7 @@
             margin-bottom: 50px;
         }
 
-        /* Clean Technical Feature Matrix */
+        /* Custom Feature List */
         .feature-item {
             display: flex;
             gap: 20px;
@@ -225,7 +224,7 @@
             color: var(--text-muted);
         }
 
-        /* Premium Lead Generation Form Box */
+        /* Lead Gen Form Box */
         .reserve-form-container {
             background: var(--bg-card);
             padding: 40px;
@@ -293,20 +292,20 @@
             color: #555;
         }
 
-        /* Responsive Viewports Layout adjustments */
+        /* Responsive Breakpoints */
         @media (max-width: 950px) {
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 80px;
-                gap: 40px;
+                padding-top: 40px;
+                gap: 30px;
             }
             .hero-text h1 {
                 font-size: 2.8rem;
             }
             .main-container {
                 grid-template-columns: 1fr;
-                gap: 50px;
+                gap: 40px;
             }
         }
 
@@ -315,7 +314,7 @@
                 font-size: 2.2rem;
             }
             .urgent-banner {
-                font-size: 1rem;
+                font-size: 1.1rem;
                 padding: 14px 10px;
             }
         }
@@ -324,7 +323,7 @@
 <body>
 
     <header>
-        <img src="1000053818.png" alt="RINGO Logo" class="logo-img">
+        <img src="logo.png" alt="RINGO Logo" class="logo-img">
         <nav>
             <a href="#features">About Us</a>
             <a href="#reserve">FAQ's</a>
@@ -338,32 +337,32 @@
             <a href="#reserve" class="cta-btn">Reserve Yours Now</a>
         </div>
         <div class="hero-image">
-            <img src="1000056086.png" alt="Ringo Premium Smart Ring Concept View">
+            <img src="hero-rings.png" alt="Ringo Premium Smart Ring View">
         </div>
     </section>
 
     <div class="urgent-banner">
-        ⭐⭐ Limited Run - Reserve Yours Now ⭐⭐⭐
+        ⭐⭐ Limited Run - Reserve Yours Now ⭐⭐
     </div>
 
     <main class="main-container">
-        
+       
         <div class="left-col">
             <section class="lineup-container">
                 <h2>Product Lineup</h2>
-                <img src="1000054073.png" alt="Ringo Complete Color Variety Showcase Lineup" class="showcase-img">
+                <img src="lifestyle-1.png" alt="Ringo Array Lineup Series" class="showcase-img">
             </section>
 
             <section id="features">
                 <h2>Core Features</h2>
-                
+               
                 <div class="feature-item">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg>
                     </div>
                     <div class="feature-text">
                         <h3>Uncompromising Security</h3>
-                        <p>Advanced tokenization architecture delivers seamless, completely secure transaction handshakes and smart access controls.</p>
+                        <p>Advanced cryptographic tokenization provides industry-grade security protocols for every touchpoint transaction.</p>
                     </div>
                 </div>
 
@@ -373,7 +372,7 @@
                     </div>
                     <div class="feature-text">
                         <h3>Ease Of Use</h3>
-                        <p>Your ring never needs to be plugged in. Built using cutting-edge passive NFC induction for zero-charging, forever functionality.</p>
+                        <p>Zero maintenance. Passive ambient induction ensures the hardware never requires a charging cable or battery cell swap.</p>
                     </div>
                 </div>
 
@@ -383,7 +382,7 @@
                     </div>
                     <div class="feature-text">
                         <h3>Waterproof Design</h3>
-                        <p>Completely impervious to water, dust, and pressure drops. Designed for uninterrupted active lifestyles.</p>
+                        <p>Engineered hermetically to ensure complete waterproof execution across complex deep-water metrics or extreme elements.</p>
                     </div>
                 </div>
             </section>
@@ -393,29 +392,21 @@
             <section id="action">
                 <h2>See It In Action</h2>
                 <div class="showcase-block">
-                    <p><strong>Point of Sale - Speed Authentication</strong></p>
-                    <img src="1000052211.png" alt="Proximity POS Terminal Ring Tap Transactions Example" class="showcase-img">
-                </div>
-            </section>
-
-            <section id="unboxing">
-                <h2>Packaging & Unboxing</h2>
-                <div class="showcase-block">
-                    <p>Premium unboxing experience matched with uncompromising luxury presentation aesthetics.</p>
-                    <img src="1000054427.png" alt="Ringo Premium White and Gold Unboxing Presentation Display Set" class="showcase-img">
+                    <p><strong>Point of Sale - Point Speed Tap</strong></p>
+                    <img src="lifestyle-2.png" alt="Point of sale payment verification example" class="showcase-img">
                 </div>
             </section>
 
             <section id="reserve">
                 <h2>Reserve Now</h2>
                 <div class="reserve-form-container">
-                    <p>*Strictly Limited to the First 100 Production Runs Globally.</p>
-                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Your Ringo allocation spot has been locked in successfully!');">
+                    <p>*Strictly Limited to the First 100 Slots Globally.</p>
+                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Your unique production allocation run spot has been reserved successfully.');">
                         <div class="form-group">
                             <input type="text" placeholder="Your Full Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Your Preferred Email" required>
+                            <input type="email" placeholder="Your Best Email" required>
                         </div>
                         <button type="submit" class="submit-btn">Pre-Order Now</button>
                     </form>
@@ -425,7 +416,7 @@
     </main>
 
     <footer id="contact">
-        <p>&copy; 2026 RINGO Electronics Inc. All Rights Reserved. | Secure Tokenization Ecosystems.</p>
+        <p>&copy; 2026 RINGO Wearables Inc. All Rights Reserved. | Secure Tokenization Systems.</p>
     </footer>
 
 </body>
